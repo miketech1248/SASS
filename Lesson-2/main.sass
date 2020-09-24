@@ -1,0 +1,78 @@
+//VARIABLES
+$brand-main:                #6600CC
+$brand-sub:                 #CC66FF
+$brand-dark:                #333
+$brand-light:               #E6F2FF
+
+//MIXINS
+=shaping($height, $width, $rad, $bg, $color)
+  height: $height
+  width: $width
+  border-radius: $rad
+  background-color: $bg
+  color: $color
+
+=btn-main($padding, $rad, $bg, $color)
+  padding: $padding
+  border-radius: $rad
+  background-color: $bg
+  color: $color
+  border-width: 0
+  border-style: none
+  cursor: pointer
+  display: block
+  margin: auto
+  &:hover
+    background-color: lighten($brand-main, 20%)
+
+
+
+
+//STYLES
+body
+  background-color: $brand-light
+
+h1
+  text-align: center
+  padding-top: 20px
+
+
+section
+  background: $brand-sub
+  color: $brand-dark
+  width: 780px
+  margin: auto
+  padding: 20px
+  border-radius: 6px
+  position: relative
+  z-index: -2
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5)
+
+.thumb1
+  +shaping(120px, 120px, 10px, $brand-dark, $brand-light)
+  margin: 0 45px -90px
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5)
+
+.thumb2
+  +shaping(100px, 100px, 50%, $brand-sub, $brand-sub)
+  margin: -50px 1110px
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5)
+
+.btn-1
+  +btn-main(15px 20px, 7px, $brand-main, white)
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5)
+
+.btn-2
+  +btn-main(30px, 50%, $brand-dark, white)
+  font-size: 2rem
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5)
+  &:hover
+    background-color: darken($brand-dark, 10%)
+
+
+
+
+
+
+
+
